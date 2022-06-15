@@ -15,26 +15,29 @@ public class UserServiceImpl implements UserService {
     @Autowired
     //SqlSessionFactory sqlSessionFactory= SqlSessionFactoryUtils.getSqlSessionFactory();
     private UserMapper userMapper;
+
     @Override
     public List<User> selectAll() {
-
-
-        /*
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        List<User> users = userMapper.selectAll();
-        sqlSession.close();
-        return users;*/
         return userMapper.selectAll();
     }
 
     @Override
     public void addUser(User user) {
-        /*
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         userMapper.addUser(user);
-        sqlSession.close();
-         */
+    }
+
+    @Override
+    public User findById(Integer id) {
+        return userMapper.findById(id);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        userMapper.delete(id);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userMapper.updateUser(user);
     }
 }
