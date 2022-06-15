@@ -7,6 +7,25 @@ public class User {
     private String phone;
     private String email;
 
+    User() {
+
+    }
+
+    public User(int id, String name, String phone, String email){
+        setId(id);
+        setName(name);
+        setPhone(phone);
+        setEmail(email);
+    }
+
+    public User(String id, String name, String phone, String email) {
+        setId(Integer.parseInt(id));
+        setName(name);
+        setPhone(phone);
+        setEmail(email);
+    }
+
+
     public int getId() {
         return id;
     }
