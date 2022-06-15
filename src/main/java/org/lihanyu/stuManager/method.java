@@ -6,7 +6,6 @@ import org.lihanyu.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.io.*;
 import java.util.List;
 
 public class method {
@@ -24,47 +23,5 @@ public class method {
             row[i][3] = users.get(i).getPhone();
         }
         return row;
-    }
-
-    //加载目标文件信息，并以ArrayList<MyAccount>形式返回
-    public List<User> loadList(List<User> users) {
-        try {
-            FileInputStream fis = new FileInputStream("d:/io/xu.txt");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            users = (List<org.lihanyu.domain.User>) (ois.readObject());
-            ois.close();
-            fis.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return users;
-    }
-
-    //用于删除原文件
-    public void delete() {
-        File f = new File("d:/io/xu.txt");
-        f.delete();
-    }
-
-    //创建新文件并写入信息
-    public void update(List<User> a1) {
-        try {
-            File f = new File("d:/io/xu.txt");
-            FileOutputStream fos = new FileOutputStream(f);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(a1);
-            oos.close();
-            fos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

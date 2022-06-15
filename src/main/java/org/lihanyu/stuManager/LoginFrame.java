@@ -1,7 +1,5 @@
 package org.lihanyu.stuManager;
 
-import org.lihanyu.service.UserService;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -58,7 +56,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         } else if (b_ok == e.getSource()) {
             //添加代码，验证身份成功后显示主界面ok
             try {
-                FileReader f = new FileReader("d:/io/pwd.txt");
+                FileReader f = new FileReader("src/main/resources/pwd.txt");
                 //传入
                 BufferedReader b1 = new BufferedReader(f);
                 String s = b1.readLine();
