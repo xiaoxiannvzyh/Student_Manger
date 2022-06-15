@@ -1,4 +1,4 @@
-package org.lihanyu.stuManager;
+package org.lihanyu.View;
 
 import javax.swing.*;
 import java.awt.*;

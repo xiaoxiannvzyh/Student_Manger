@@ -1,4 +1,4 @@
-package org.lihanyu.stuManager;
+package org.lihanyu.View;
 
 import org.lihanyu.config.SpringConfig;
 import org.lihanyu.domain.User;
@@ -248,13 +248,14 @@ public class BalEditFrame extends JFrame implements ActionListener {
                 //写的方法类
                 int id = Integer.parseInt(t_id.getText());
                 userService.delete(id);
+                this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
                 java.util.List<org.lihanyu.domain.User> users = userService.selectAll();
                 new BalEditFrame(users);
             }
         } else if (b_new == e.getSource()) {   //新增某条收支信息
             //添加代码
             org.lihanyu.domain.User user = new org.lihanyu.domain.User(t_id.getText(), t_date.getText(), t_type.getText(), t_item.getText());
-            if (user.equals(userService.findById(Integer.valueOf(t_id.getText())))) {
+            if (user.getId() == userService.findById(Integer.valueOf(t_id.getText())).getId()) {
                 userService.addUser(user);
             } else {
                 JOptionPane.showMessageDialog(null, "id重复，重新编辑", "警告", JOptionPane.ERROR_MESSAGE);

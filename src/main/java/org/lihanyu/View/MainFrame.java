@@ -1,4 +1,4 @@
-package org.lihanyu.stuManager;
+package org.lihanyu.View;
 
 import org.lihanyu.domain.User;
 
