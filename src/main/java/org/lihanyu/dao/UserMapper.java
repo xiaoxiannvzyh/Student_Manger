@@ -16,7 +16,7 @@ public interface UserMapper {
     List<User> selectAll();
 
     //数据库中增加用户
-    @Insert("insert into user_db values(null,#{username},#{email},#{phone};")
+    @Insert("insert into user_db values(null,#{name},#{email},#{phone});")
     void addUser(User user);
 
     //数据库中更新用户
