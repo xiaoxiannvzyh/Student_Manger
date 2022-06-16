@@ -1,9 +1,6 @@
 package org.lihanyu.dao;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.lihanyu.domain.User;
 
 import java.util.List;
@@ -13,10 +10,13 @@ public interface UserMapper {
 
     //查询所有内容
     @Select("select * from user_db;")
+    @Results(value = {
+            @Result(property = "name", column = "user_name")
+    })
     List<User> selectAll();
 
     //数据库中增加用户
-    @Insert("insert into user_db values(null,#{username},#{email},#{phone};")
+    @Insert("insert into user_db values(null,#{name},#{email},#{phone});")
     void addUser(User user);
 
     //数据库中更新用户

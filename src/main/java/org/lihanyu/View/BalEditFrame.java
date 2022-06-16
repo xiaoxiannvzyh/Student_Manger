@@ -249,7 +249,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
         } else if (b_new == e.getSource()) {   //新增某条学生信息
             //添加代码
             org.lihanyu.domain.User user = new org.lihanyu.domain.User(t_id.getText(), t_date.getText(), t_type.getText(), t_item.getText());
-            if (user.getId() == userService.findById(Integer.valueOf(t_id.getText())).getId()) {
+            if (userService.findById(Integer.valueOf(t_id.getText())) == null) {
                 userService.addUser(user);
             } else {
                 JOptionPane.showMessageDialog(null, "id重复，重新编辑", "警告", JOptionPane.ERROR_MESSAGE);
