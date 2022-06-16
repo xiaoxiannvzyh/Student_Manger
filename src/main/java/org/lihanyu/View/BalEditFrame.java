@@ -13,8 +13,8 @@ import java.util.List;
 
 //学生编辑界面
 public class BalEditFrame extends JFrame implements ActionListener {
-    private JLabel l_id, l_date, l_bal, l_type, l_item;
-    private JTextField t_id, t_date, t_bal, t_type, t_item;
+    private JLabel l_id, l_date, l_type, l_item;
+    private JTextField t_id, t_date, t_type, t_item;
     //    private JComboBox c_type, c_item;
     private JButton b_update, b_delete, b_select, b_new;
     private JPanel p1, p2, p3;
@@ -28,14 +28,12 @@ public class BalEditFrame extends JFrame implements ActionListener {
     //学生界面构造函数
     public BalEditFrame() {
         super("学生信息编辑");
-        l_id = new JLabel("学号");
-        l_date = new JLabel("学生姓名：");
-        l_bal = new JLabel("电话：");
-        l_type = new JLabel("内容：");
-        l_item = new JLabel("邮箱：");
+        l_id = new JLabel("学生姓名");
+        l_date = new JLabel("学号：");
+        l_type = new JLabel("邮箱：");
+        l_item = new JLabel("电话：");
         t_id = new JTextField(8);
         t_date = new JTextField(8);
-        t_bal = new JTextField(8);
         t_type = new JTextField(8);
         t_item = new JTextField(8);
 
@@ -48,20 +46,18 @@ public class BalEditFrame extends JFrame implements ActionListener {
         c.setLayout(new BorderLayout());
 
         p1 = new JPanel();
-        p1.setLayout(new GridLayout(5, 2, 10, 10));
+        p1.setLayout(new GridLayout(4, 2, 10, 10));
         p1.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createTitledBorder("编辑学生信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         p1.add(l_id);
-        p1.add(t_id);
-        p1.add(l_date);
         p1.add(t_date);
+        p1.add(l_date);
+        p1.add(t_id);
         p1.add(l_type);
         p1.add(t_type);
         p1.add(l_item);
         p1.add(t_item);
-        p1.add(l_bal);
-        p1.add(t_bal);
         c.add(p1, BorderLayout.WEST);
 
         p2 = new JPanel();
@@ -109,7 +105,6 @@ public class BalEditFrame extends JFrame implements ActionListener {
                                        t_date.setText(row[a][1].toString());
                                        t_type.setText(row[a][2].toString());
                                        t_item.setText(row[a][3].toString());
-                                       t_bal.setText(row[a][4].toString());
                                    }
                                }
         );
@@ -124,14 +119,12 @@ public class BalEditFrame extends JFrame implements ActionListener {
     //学生界面构造函数重载，用于刷新学生界面
     public BalEditFrame(java.util.List<org.lihanyu.domain.User> users) {
         super("学生信息编辑");
-        l_id = new JLabel("学号：");
-        l_date = new JLabel("学生姓名：");
-        l_bal = new JLabel("电话：");
-        l_type = new JLabel("内容：");
-        l_item = new JLabel("邮箱：：");
+        l_id = new JLabel("学生姓名：");
+        l_date = new JLabel("学号：");
+        l_type = new JLabel("邮箱：");
+        l_item = new JLabel("电话：");
         t_id = new JTextField(8);
         t_date = new JTextField(8);
-        t_bal = new JTextField(8);
         t_type = new JTextField(8);
         t_item = new JTextField(8);
 
@@ -144,20 +137,18 @@ public class BalEditFrame extends JFrame implements ActionListener {
         c.setLayout(new BorderLayout());
 
         p1 = new JPanel();
-        p1.setLayout(new GridLayout(5, 2, 10, 10));
+        p1.setLayout(new GridLayout(4, 2, 10, 10));
         p1.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createTitledBorder("编辑学生信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         p1.add(l_id);
-        p1.add(t_id);
-        p1.add(l_date);
         p1.add(t_date);
+        p1.add(l_date);
+        p1.add(t_id);
         p1.add(l_type);
         p1.add(t_type);
         p1.add(l_item);
         p1.add(t_item);
-        p1.add(l_bal);
-        p1.add(t_bal);
         c.add(p1, BorderLayout.WEST);
 
         p2 = new JPanel();
@@ -205,7 +196,6 @@ public class BalEditFrame extends JFrame implements ActionListener {
                                        t_date.setText(row[a][1].toString());
                                        t_type.setText(row[a][2].toString());
                                        t_item.setText(row[a][3].toString());
-                                       t_bal.setText(row[a][4].toString());
                                        t_id.setEditable(false);
                                    }
                                }
