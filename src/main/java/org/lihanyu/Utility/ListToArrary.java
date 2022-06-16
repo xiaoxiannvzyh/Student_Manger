@@ -16,6 +16,4 @@ public class ListToArrary {
         }
         return row;
     }
-
-
 }
