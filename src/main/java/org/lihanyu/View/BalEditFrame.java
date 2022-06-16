@@ -16,7 +16,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
     private JLabel l_id, l_date, l_bal, l_type, l_item;
     private JTextField t_id, t_date, t_bal, t_type, t_item;
     //    private JComboBox c_type, c_item;
-    private JButton b_update, b_delete, b_select, b_new, b_clear;
+    private JButton b_update, b_delete, b_select, b_new;
     private JPanel p1, p2, p3;
     private JScrollPane scrollpane;
     private JTable table;
@@ -43,7 +43,6 @@ public class BalEditFrame extends JFrame implements ActionListener {
         b_update = new JButton("修改");
         b_delete = new JButton("删除");
         b_new = new JButton("增加");
-        b_clear = new JButton("清空");
 
         Container c = this.getContentPane();
         c.setLayout(new BorderLayout());
@@ -66,12 +65,11 @@ public class BalEditFrame extends JFrame implements ActionListener {
         c.add(p1, BorderLayout.WEST);
 
         p2 = new JPanel();
-        p2.setLayout(new GridLayout(5, 1, 10, 10));
+        p2.setLayout(new GridLayout(4, 1, 10, 10));
         p2.add(b_new);
         p2.add(b_update);
         p2.add(b_delete);
         p2.add(b_select);
-        p2.add(b_clear);
 
         c.add(p2, BorderLayout.CENTER);
 
@@ -99,7 +97,6 @@ public class BalEditFrame extends JFrame implements ActionListener {
         b_delete.addActionListener(this);
         b_select.addActionListener(this);
         b_new.addActionListener(this);
-        b_clear.addActionListener(this);
 
         //添加代码，为table添加鼠标点击事件监听addMouseListener
         table.addMouseListener(new MouseAdapter() {
@@ -142,7 +139,6 @@ public class BalEditFrame extends JFrame implements ActionListener {
         b_update = new JButton("修改");
         b_delete = new JButton("删除");
         b_new = new JButton("增加");
-        b_clear = new JButton("清空");
 
         Container c = this.getContentPane();
         c.setLayout(new BorderLayout());
@@ -165,12 +161,11 @@ public class BalEditFrame extends JFrame implements ActionListener {
         c.add(p1, BorderLayout.WEST);
 
         p2 = new JPanel();
-        p2.setLayout(new GridLayout(5, 1, 10, 10));
+        p2.setLayout(new GridLayout(4, 1, 10, 10));
         p2.add(b_new);
         p2.add(b_update);
         p2.add(b_delete);
         p2.add(b_select);
-        p2.add(b_clear);
 
         c.add(p2, BorderLayout.CENTER);
 
@@ -198,7 +193,6 @@ public class BalEditFrame extends JFrame implements ActionListener {
         b_delete.addActionListener(this);
         b_select.addActionListener(this);
         b_new.addActionListener(this);
-        b_clear.addActionListener(this);
 
         //添加代码，为table添加鼠标点击事件监听addMouseListener
         table.addMouseListener(new MouseAdapter() {
