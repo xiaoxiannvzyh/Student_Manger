@@ -16,7 +16,7 @@ public class MainFrame extends JFrame implements ActionListener {
     private JMenuItem mI[] = {new JMenuItem("密码重置"), new JMenuItem("退出系统")};
     private JMenuItem m_FMEdit = new JMenuItem("菜单");
     private JLabel l_bal;
-    private JPanel p_condition, p_detail;
+    private JPanel  p_detail;
     private JTable table;
     private String username;
 
@@ -87,7 +87,7 @@ public class MainFrame extends JFrame implements ActionListener {
 
         p_detail = new JPanel();
         p_detail.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createTitledBorder("收支明细信息"),
+                BorderFactory.createTitledBorder("学生明细信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         l_bal = new JLabel();
         String[] cloum = {"学生姓名", "学号", "电话", "邮箱"};
@@ -121,7 +121,7 @@ public class MainFrame extends JFrame implements ActionListener {
             //退出系统
             System.exit(0);
         } else if (temp == m_FMEdit) {
-            //收支编辑
+            //学生信息编辑
             new BalEditFrame();
         }
     }

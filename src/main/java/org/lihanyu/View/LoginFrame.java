@@ -22,8 +22,8 @@ public class LoginFrame extends JFrame implements ActionListener {
         super("欢迎使用学生管理系统!");
         l_user = new JLabel("用户名：", JLabel.RIGHT);
         l_pwd = new JLabel(" 密码：", JLabel.RIGHT);
-        t_user = new JTextField(36);
-        t_pwd = new JPasswordField(36);
+        t_user = new JTextField(38);
+        t_pwd = new JPasswordField(38);
         b_ok = new JButton("登录");
         b_cancel = new JButton("退出");
         //布局方式FlowLayout，一行排满排下一行

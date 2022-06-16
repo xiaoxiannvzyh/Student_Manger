@@ -11,7 +11,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 
-//收支编辑界面
+//学生编辑界面
 public class BalEditFrame extends JFrame implements ActionListener {
     private JLabel l_id, l_date, l_bal, l_type, l_item;
     private JTextField t_id, t_date, t_bal, t_type, t_item;
@@ -25,9 +25,9 @@ public class BalEditFrame extends JFrame implements ActionListener {
 
     UserService userService = ctx.getBean(UserService.class);
 
-    //收支界面构造函数
+    //学生界面构造函数
     public BalEditFrame() {
-        super("收支编辑");
+        super("学生信息编辑");
         l_id = new JLabel("学生姓名");
         l_date = new JLabel("学号：");
         l_bal = new JLabel("电话：");
@@ -51,7 +51,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
         p1 = new JPanel();
         p1.setLayout(new GridLayout(5, 2, 10, 10));
         p1.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createTitledBorder("编辑收支信息"),
+                BorderFactory.createTitledBorder("编辑学生信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         p1.add(l_id);
         p1.add(t_id);
@@ -77,7 +77,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
 
         p3 = new JPanel();
         p3.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createTitledBorder("显示收支信息"),
+                BorderFactory.createTitledBorder("显示学生信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
         String[] cloum = {"学生姓名", "学号", "电话", "邮箱"};
@@ -124,14 +124,14 @@ public class BalEditFrame extends JFrame implements ActionListener {
         this.show();
     }
 
-    //收支界面构造函数重载，用于刷新收支界面
+    //学生界面构造函数重载，用于刷新学生界面
     public BalEditFrame(java.util.List<org.lihanyu.domain.User> users) {
-        super("收支编辑");
-        l_id = new JLabel("编号：");
-        l_date = new JLabel("日期：");
-        l_bal = new JLabel("金额：");
-        l_type = new JLabel("类型：");
-        l_item = new JLabel("内容：");
+        super("学生信息编辑");
+        l_id = new JLabel("学生姓名：");
+        l_date = new JLabel("学号：");
+        l_bal = new JLabel("电话：");
+        l_type = new JLabel("邮箱：");
+        l_item = new JLabel("内容：：");
         t_id = new JTextField(8);
         t_date = new JTextField(8);
         t_bal = new JTextField(8);
@@ -141,7 +141,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
         b_select = new JButton("查询");
         b_update = new JButton("修改");
         b_delete = new JButton("删除");
-        b_new = new JButton("录入");
+        b_new = new JButton("增加");
         b_clear = new JButton("清空");
 
         Container c = this.getContentPane();
@@ -150,7 +150,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
         p1 = new JPanel();
         p1.setLayout(new GridLayout(5, 2, 10, 10));
         p1.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createTitledBorder("编辑收支信息"),
+                BorderFactory.createTitledBorder("编辑学生信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         p1.add(l_id);
         p1.add(t_id);
@@ -176,10 +176,10 @@ public class BalEditFrame extends JFrame implements ActionListener {
 
         p3 = new JPanel();
         p3.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createTitledBorder("显示收支信息"),
+                BorderFactory.createTitledBorder("显示学生信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
-        String[] cloum = {"编号", "日期", "类型", "内容", "金额"};
+        String[] cloum = {"学生姓名", "学号", "电话", "邮箱"};
         Object[][] row = new Object[50][5];
 
         //创建方法类
@@ -227,7 +227,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (b_select == e.getSource()) {
-            //查询所有收支信息 ok
+            //查询所有学生信息 ok
             //添加代码
             this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
             new BalEditFrame();
@@ -242,7 +242,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
                 java.util.List<org.lihanyu.domain.User> users = userService.selectAll();
                 new BalEditFrame(users);
             }
-        } else if (b_delete == e.getSource()) {   //删除某条收支信息
+        } else if (b_delete == e.getSource()) {   //删除某条学生信息
             final int op = 0;
             if (op == JOptionPane.showConfirmDialog(null, "确定修改？", "提示", JOptionPane.OK_CANCEL_OPTION)) {
                 //写的方法类
@@ -252,7 +252,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
                 java.util.List<org.lihanyu.domain.User> users = userService.selectAll();
                 new BalEditFrame(users);
             }
-        } else if (b_new == e.getSource()) {   //新增某条收支信息
+        } else if (b_new == e.getSource()) {   //新增某条学生信息
             //添加代码
             org.lihanyu.domain.User user = new org.lihanyu.domain.User(t_id.getText(), t_date.getText(), t_type.getText(), t_item.getText());
             if (user.getId() == userService.findById(Integer.valueOf(t_id.getText())).getId()) {
