@@ -28,11 +28,11 @@ public class BalEditFrame extends JFrame implements ActionListener {
     //学生界面构造函数
     public BalEditFrame() {
         super("学生信息编辑");
-        l_id = new JLabel("学生姓名");
-        l_date = new JLabel("学号：");
+        l_id = new JLabel("学号");
+        l_date = new JLabel("学生姓名：");
         l_bal = new JLabel("电话：");
-        l_type = new JLabel("邮箱：");
-        l_item = new JLabel("内容：");
+        l_type = new JLabel("内容：");
+        l_item = new JLabel("邮箱：");
         t_id = new JTextField(8);
         t_date = new JTextField(8);
         t_bal = new JTextField(8);
@@ -124,11 +124,11 @@ public class BalEditFrame extends JFrame implements ActionListener {
     //学生界面构造函数重载，用于刷新学生界面
     public BalEditFrame(java.util.List<org.lihanyu.domain.User> users) {
         super("学生信息编辑");
-        l_id = new JLabel("学生姓名：");
-        l_date = new JLabel("学号：");
+        l_id = new JLabel("学号：");
+        l_date = new JLabel("学生姓名：");
         l_bal = new JLabel("电话：");
-        l_type = new JLabel("邮箱：");
-        l_item = new JLabel("内容：：");
+        l_type = new JLabel("内容：");
+        l_item = new JLabel("邮箱：：");
         t_id = new JTextField(8);
         t_date = new JTextField(8);
         t_bal = new JTextField(8);
