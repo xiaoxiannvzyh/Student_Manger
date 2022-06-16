@@ -30,8 +30,8 @@ public class BalEditFrame extends JFrame implements ActionListener {
         super("学生信息编辑");
         l_id = new JLabel("学生姓名");
         l_date = new JLabel("学号：");
-        l_type = new JLabel("邮箱：");
-        l_item = new JLabel("电话：");
+        l_type = new JLabel("电话：");
+        l_item = new JLabel("邮箱：");
         t_id = new JTextField(8);
         t_date = new JTextField(8);
         t_type = new JTextField(8);
@@ -101,8 +101,8 @@ public class BalEditFrame extends JFrame implements ActionListener {
 //				得到选中的行列的索引值
 //              得到选中的单元格的值，表格中都是字符串
                                        int a = table.getSelectedRow();
-                                       t_id.setText(row[a][0].toString());
-                                       t_date.setText(row[a][1].toString());
+                                       t_date.setText(row[a][0].toString());
+                                       t_id.setText(row[a][1].toString());
                                        t_type.setText(row[a][2].toString());
                                        t_item.setText(row[a][3].toString());
                                    }
@@ -121,8 +121,8 @@ public class BalEditFrame extends JFrame implements ActionListener {
         super("学生信息编辑");
         l_id = new JLabel("学生姓名：");
         l_date = new JLabel("学号：");
-        l_type = new JLabel("邮箱：");
-        l_item = new JLabel("电话：");
+        l_type = new JLabel("电话：");
+        l_item = new JLabel("邮箱：");
         t_id = new JTextField(8);
         t_date = new JTextField(8);
         t_type = new JTextField(8);
@@ -192,8 +192,8 @@ public class BalEditFrame extends JFrame implements ActionListener {
 //				得到选中的行列的索引值
 //              得到选中的单元格的值，表格中都是字符串
                                        int a = table.getSelectedRow();
-                                       t_id.setText(row[a][0].toString());
-                                       t_date.setText(row[a][1].toString());
+                                       t_date.setText(row[a][0].toString());
+                                       t_id.setText(row[a][1].toString());
                                        t_type.setText(row[a][2].toString());
                                        t_item.setText(row[a][3].toString());
                                        t_id.setEditable(false);
@@ -222,6 +222,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
 
                 org.lihanyu.domain.User user = new org.lihanyu.domain.User(t_id.getText(), t_date.getText(), t_type.getText(), t_item.getText());
                 this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+                System.out.println(t_id.getText());
                 userService.updateUser(user);
                 java.util.List<org.lihanyu.domain.User> users = userService.selectAll();
                 new BalEditFrame(users);
@@ -231,6 +232,7 @@ public class BalEditFrame extends JFrame implements ActionListener {
             if (op == JOptionPane.showConfirmDialog(null, "确定修改？", "提示", JOptionPane.OK_CANCEL_OPTION)) {
                 //写的方法类
                 int id = Integer.parseInt(t_id.getText());
+                System.out.println(id);
                 userService.delete(id);
                 this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
                 java.util.List<org.lihanyu.domain.User> users = userService.selectAll();

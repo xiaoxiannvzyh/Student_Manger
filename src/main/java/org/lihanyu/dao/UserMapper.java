@@ -20,7 +20,7 @@ public interface UserMapper {
     void addUser(User user);
 
     //数据库中更新用户
-    @Update("update user_db set username=#{username},email=#{email},phone=#{phone} where id=#{id};")
+    @Update("update user_db set user_name=#{name},email=#{email},phone=#{phone} where id=#{id};")
     void updateUser(User user);
 
     //查找指定id的用户
