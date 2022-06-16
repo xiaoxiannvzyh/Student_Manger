@@ -51,9 +51,9 @@ public class BalEditFrame extends JFrame implements ActionListener {
                 BorderFactory.createTitledBorder("编辑学生信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         p1.add(l_id);
-        p1.add(t_id);
-        p1.add(l_date);
         p1.add(t_date);
+        p1.add(l_date);
+        p1.add(t_id);
         p1.add(l_type);
         p1.add(t_type);
         p1.add(l_item);
@@ -142,9 +142,9 @@ public class BalEditFrame extends JFrame implements ActionListener {
                 BorderFactory.createTitledBorder("编辑学生信息"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
         p1.add(l_id);
-        p1.add(t_id);
-        p1.add(l_date);
         p1.add(t_date);
+        p1.add(l_date);
+        p1.add(t_id);
         p1.add(l_type);
         p1.add(t_type);
         p1.add(l_item);
