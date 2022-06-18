@@ -5,7 +5,7 @@ import org.lihanyu.domain.User;
 
 import java.util.List;
 
-
+@Mapper
 public interface UserMapper {
 
     //查询所有内容

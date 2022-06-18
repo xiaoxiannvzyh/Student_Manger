@@ -187,18 +187,17 @@ public class BalEditFrame extends JFrame implements ActionListener {
 
         //添加代码，为table添加鼠标点击事件监听addMouseListener
         table.addMouseListener(new MouseAdapter() {
-                                   public void mouseClicked(MouseEvent e) {
+            public void mouseClicked(MouseEvent e) {
 //				仅当鼠标单击时响应
 //				得到选中的行列的索引值
 //              得到选中的单元格的值，表格中都是字符串
-                                       int a = table.getSelectedRow();
-                                       t_date.setText(row[a][0].toString());
-                                       t_id.setText(row[a][1].toString());
-                                       t_type.setText(row[a][2].toString());
-                                       t_item.setText(row[a][3].toString());
-                                       t_id.setEditable(false);
-                                   }
-                               }
+               int a = table.getSelectedRow();
+               t_date.setText(row[a][0].toString());
+               t_id.setText(row[a][1].toString());
+               t_type.setText(row[a][2].toString());
+               t_item.setText(row[a][3].toString());
+           }
+       }
         );
 
         this.setResizable(false);

@@ -72,8 +72,6 @@ public class LoginFrame extends JFrame implements ActionListener {
                 }
             } catch (FileNotFoundException e1) {
                 e1.printStackTrace();
-            } catch (IOException e1) {
-                e1.printStackTrace();
             } catch (Exception e1) {
                 e1.printStackTrace();
             }

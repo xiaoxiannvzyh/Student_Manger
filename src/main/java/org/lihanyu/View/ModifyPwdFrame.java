@@ -54,14 +54,14 @@ public class ModifyPwdFrame extends JFrame implements ActionListener {
             //确定
             try {
                 boolean judge = true;
-                BufferedReader br = new BufferedReader(new FileReader("d:/io/pwd.txt"));
+                BufferedReader br = new BufferedReader(new FileReader("src/main/resources/pwd.txt"));
                 String s = br.readLine();
                 if (t_newPWD.getText().trim().equals(s)) {
                     JOptionPane.showMessageDialog(null, "新密码与原密码一样", "警告", JOptionPane.ERROR_MESSAGE);
                     judge = false;
                 }
                 if (t_newPWDAgain.getText().trim().contentEquals(t_newPWD.getText()) && judge == true) {
-                    PrintWriter p = new PrintWriter(new BufferedWriter(new FileWriter("d:/io/pwd.txt")));
+                    PrintWriter p = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/pwd.txt")));
                     p.println(t_newPWD.getPassword());
                     p.close();
                     JOptionPane.showMessageDialog(null, "修改密码成功", "提醒", JOptionPane.INFORMATION_MESSAGE);
@@ -71,8 +71,6 @@ public class ModifyPwdFrame extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "两次新密码不一致！", "警告", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (FileNotFoundException e1) {
-                e1.printStackTrace();
-            } catch (IOException e1) {
                 e1.printStackTrace();
             } catch (Exception e1) {
                 e1.printStackTrace();
